@@ -24,10 +24,10 @@ Author = 'Chris Gardner'
 CompanyName = 'Chris Gardner'
 
 # Copyright statement for this module
-Copyright = '(c) 2017 Chris. All rights reserved.'
+Copyright = '(c) 2019 Chris. All rights reserved.'
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('JeaDsc')
+#RequiredModules = @('JeaDsc')
 
 # DSC resources to export from this module
 DscResourcesToExport = @('JeaConfig')
