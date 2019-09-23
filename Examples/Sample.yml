@@ -1,0 +1,36 @@
+Configurations:
+  - JeaConfig
+
+JeaConfig:
+  RoleCapabilities:
+    Path: C:\Program Files\WindowsPowerShell\Modules\Jea\RoleCapabilities\NewExample.psrc
+    Name: NewExample
+    VisibleProviders: Item4
+    VisibleCmdlets : 
+      - 'Invoke-Cmdlet1'
+      - Name: 'Invoke-Cmdlet2'
+        Parameters:
+          - Name: 'Parameter1'
+            ValidateSet: 
+              - 'Item1'
+              - 'Item2'
+          - Name: 'Parameter2'
+            ValidatePattern: 'L*'
+    VisibleFunctions: 
+      - 'Invoke-Function1'
+      - Name: 'Invoke-Function2'
+        Parameters: 
+          - Name: 'Parameter1'
+            ValidateSet:
+              - 'Item1'
+              - 'Item2'
+          - Name: 'Parameter2'
+            ValidatePattern: 'L*'
+                
+  SessionConfigurations:
+  - RoleDefinitions:
+      GeneralLev1Group:
+        RoleCapabilities: NewExample
+    EndpointName: Main
+    TranscriptDirectory: C:\ProgramData\JEAConfiguration\Transcripts
+    RunAsVirtualAccountGroups: Administrators
